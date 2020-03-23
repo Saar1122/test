@@ -2,19 +2,19 @@
 version: 2
 jobs:
   build:
-    docker:
+    #docker:
      # using custom image, see .circleci/images/primary/Dockerfile
-     - image: circleci/node:7.10
+     #- image: circleci/node:7.10
     working_directory: ~/Saar1122/test
  #   machine: true
     steps:
       - checkout
       # build image with dockefile
-      
-      - run: sudo apt install python3-pip
-      - run: sudo pip3 install click
-      - run: sudo pip3 install requests
-      - run: python3 docker-auto.py
+      - run: docker-compose
+#       - run: sudo apt install python3-pip
+#       - run: sudo pip3 install click
+#       - run: sudo pip3 install requests
+#       - run: python3 docker-auto.py
       
 
  #      - run: docker build . -t saar
