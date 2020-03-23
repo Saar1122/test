@@ -1,17 +1,20 @@
 
 version: 2
 jobs:
- build:
-   working_directory: ~/demo-project
-   machine: true
-   steps:
-     - checkout
-     # build image with dockefile
-     - run: docker-auto.py
+  build:
+    docker:
+     # using custom image, see .circleci/images/primary/Dockerfile
+     - image: circleci/cci-demo-docker-primary:0.0.2
+    working_directory: ~/Saar1122/test
+    machine: true
+    steps:
+      - checkout
+      # build image with dockefile
+      - run: check.py
 
-#      - run: docker build . -t saar
-#      # build the application image
-#      - run: docker run -p 3000:3000 -d saar
-#      # check containter id
-#      - run: docker ps -a
-     
+ #      - run: docker build . -t saar
+ #      # build the application image
+ #      - run: docker run -p 3000:3000 -d saar
+ #      # check containter id
+ #      - run: docker ps -a
+
