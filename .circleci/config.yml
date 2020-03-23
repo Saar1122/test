@@ -10,8 +10,9 @@ jobs:
     steps:
       - checkout
       # build image with dockefile
+      - run: 
         name: check the check file
-      - run: python3 check.py
+        command: python3 check.py
       
 
  #      - run: docker build . -t saar
