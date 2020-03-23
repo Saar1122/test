@@ -4,15 +4,13 @@ jobs:
   build:
     docker:
      # using custom image, see .circleci/images/primary/Dockerfile
-     - image: circleci/cci-demo-docker-primary:0.0.2
+     - image: circleci/node:7.10
     working_directory: ~/Saar1122/test
  #   machine: true
     steps:
       - checkout
       # build image with dockefile
-      - run: 
-        name: check the check file
-        command: python3 check.py
+      - run: python3 check.py
       
 
  #      - run: docker build . -t saar
