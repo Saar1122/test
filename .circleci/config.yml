@@ -6,7 +6,7 @@ jobs:
      # using custom image, see .circleci/images/primary/Dockerfile
      #- image: circleci/node:7.10
     working_directory: ~/Saar1122/test
- #   machine: true
+    machine: true
     steps:
       - checkout
       # build image with dockefile
