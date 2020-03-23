@@ -8,4 +8,4 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: docker-compose ud -d
+      - run: docker-compose up -d
