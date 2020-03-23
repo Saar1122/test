@@ -1,10 +1,11 @@
-version: 2.1
+
+version: 2
 jobs:
-  build:
-    machine:
-    steps:
-      - checkout
-      - run: build -t . saar
-      - run: docker run -d saar
-      - run: docker ps -a
-    
+ build:
+   machine: true
+   steps:
+     - checkout
+     # build image with dockefile
+     - run: docker build . -t saar
+     # build the application image
+     - run: docker run -p 3000:3000 -d saar
