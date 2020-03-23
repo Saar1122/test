@@ -2,6 +2,7 @@
 version: 2
 jobs:
  build:
+   working_directory: ~/demo-project
    machine: true
    steps:
      - checkout
