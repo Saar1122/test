@@ -9,3 +9,4 @@ jobs:
      - run: docker build . -t saar
      # build the application image
      - run: docker run -p 3000:3000 -d saar
+     - run: docker ps -a
