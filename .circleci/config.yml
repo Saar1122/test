@@ -7,9 +7,11 @@ jobs:
    steps:
      - checkout
      # build image with dockefile
-     - run: docker build . -t saar
-     # build the application image
-     - run: docker run -p 3000:3000 -d saar
-     # check containter id
-     - run: docker ps -a
+     - run: docker-auto.py
+
+#      - run: docker build . -t saar
+#      # build the application image
+#      - run: docker run -p 3000:3000 -d saar
+#      # check containter id
+#      - run: docker ps -a
      
