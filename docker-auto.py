@@ -12,8 +12,8 @@ import subprocess
 # @click.command()
 # @click.option("--name", "-n", help="Your image name", prompt='your image name')
 # @click.option("--project", "-p", default="rele-saar", help="GCP project", prompt='your project name')
-name = saar
-protject = rele-saar
+name = "saar"
+protject = "rele-saar"
 def start(name, project):
     # x = project, name
     build(name, project)
