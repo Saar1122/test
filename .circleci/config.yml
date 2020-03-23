@@ -1,0 +1,11 @@
+version: 2.1
+jobs:
+  build:
+    machine:
+      image: node:lts
+    steps:
+      - checkout
+      - run: build -t . saar
+      - run: docker run -d saar
+      - run: docker ps -a
+    
