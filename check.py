@@ -20,8 +20,8 @@
 # import math
 def saar():
     try:
-        a = int(input('press nubmer: '))
-        b = int(input('press nubmer: '))
+        a = 2 #int(input('press nubmer: '))
+        b = 2 #int(input('press nubmer: '))
         add = a + b
         sub = a - b
         mul = a * b
