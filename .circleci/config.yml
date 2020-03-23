@@ -14,7 +14,6 @@ jobs:
       - run: sudo apt install python3-pip
       - run: pip install click
       - run: pipenv install requests
-      - run: 
       - run: python3 docker-auto.py
       
 
