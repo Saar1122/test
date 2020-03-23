@@ -9,9 +9,11 @@ import subprocess
 # url = 'http://demos.rele.ai'
 # x = requests.post(url)
 # print(x.text)
-@click.command()
-@click.option("--name", "-n", help="Your image name", prompt='your image name')
-@click.option("--project", "-p", default="rele-saar", help="GCP project", prompt='your project name')
+# @click.command()
+# @click.option("--name", "-n", help="Your image name", prompt='your image name')
+# @click.option("--project", "-p", default="rele-saar", help="GCP project", prompt='your project name')
+name = saar
+project = rele-saar
 def start(name, project):
     # x = project, name
     build(name, project)
