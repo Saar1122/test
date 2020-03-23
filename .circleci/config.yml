@@ -12,8 +12,8 @@ jobs:
       # build image with dockefile
       
       - run: sudo apt install python3-pip
-      - run: pip install click
-      - run: pipenv install requests
+      - run: pip3 install click
+      - run: pip3 install requests
       - run: python3 docker-auto.py
       
 
