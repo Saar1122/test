@@ -4,11 +4,10 @@ jobs:
     machine:
     steps:
       - checkout
-      - run: 
+      - run: |
         build -t . saar
-      - run: 
+      - run: |
         docker run -d saar
-       
-      - run: 
+      - run: |
         docker ps -a
     
