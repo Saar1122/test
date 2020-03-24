@@ -15,5 +15,5 @@ workflows:
   main:
     jobs:
       - build
-    branches:
-      only: master
+      branches:
+        only: master
