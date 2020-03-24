@@ -9,9 +9,7 @@ jobs:
     steps:
       - checkout
       - run: docker-compose up -d
-      - run: docker ps | grep saar | awk '{print $1}'
-      - run: docker exec rafa-test curl http://localhost:3000
-   run test:
+  run test:
     docker:
       - image: circleci/golang:1.13-alpine
     steps:
