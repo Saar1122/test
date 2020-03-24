@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - run: docker-compose up -d
+      - run: docker ps 
       - run: curl http://localhost:3000
 workflows:
   version: 2
