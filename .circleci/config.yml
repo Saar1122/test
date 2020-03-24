@@ -4,16 +4,9 @@ jobs:
     #docker:
      # using custom image, see .circleci/images/primary/Dockerfile
      #- image: circleci/node:7.10
-    working_directory: ~/Saar1122/test
+    #working_directory: ~/Saar1122/test
     machine: true
     steps:
       - checkout
       - run: docker-compose up -d
-  run test:
-    docker:
-      - image: circleci/golang:1.13-alpine
-    steps:
-      - checkout
-      - run: sudo apt install python3.7
-      - run: sudo pip3 install requests
-      - run: python3 test.py
+      - run: curl localhost:3000
