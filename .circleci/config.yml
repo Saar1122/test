@@ -9,4 +9,12 @@ jobs:
     steps:
       - checkout
       - run: docker-compose up -d
-      - run: curl localhost:3000
+      - run: curl http://localhost:3000
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build
+          filters:
+            branches:
+              only: master
