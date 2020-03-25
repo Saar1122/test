@@ -1,10 +1,10 @@
 version: 2
 jobs:
   build:
-    #docker:
-      #- image: circleci/python:3.6.2-stretch-browsers
-    working_directory: ~/project
-    machine: true
+    docker:
+      - image: circleci/python:3.6.2-stretch-browsers
+#    working_directory: ~/project
+#    machine: true
 #    machine:
 #      python:
 #       version: 3.5.2
@@ -13,13 +13,10 @@ jobs:
 #       - run: docker-compose up -d
 #       - run: docker ps 
 #       - run: ls -l
-       - run: python3 -m pip install --upgrade pip
        - run: sudo pip3 install requests
        - run: sudo pip3 install click
        - run: ls -l
 #       - run: python3 docker-auto.py
-       
-
 workflows:
   version: 2
   test_workflows: #name of workflows
