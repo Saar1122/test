@@ -8,7 +8,7 @@ jobs:
     #machine: true
     machine:
       python:
-       version: 3.6.4
+       version: 3.7.4
     steps:
 #       - checkout
 #       - run: docker-compose up -d
