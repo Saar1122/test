@@ -9,7 +9,7 @@ jobs:
       - run:
           name: "Switch to Python v3.7"
           command: |
-            sudo pip install pipenv
+            pip install pipenv
             pipenv install
 #      - run: pip3 install requests
 #      - run: pip3 install click
