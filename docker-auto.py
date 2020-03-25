@@ -5,35 +5,32 @@ import requests
 import subprocess
 #from learn import 
 
-name = "saar"
-project = "saar"
 # url = 'http://demos.rele.ai'
 # x = requests.post(url)
 # print(x.text)
 # @click.command()
 # @click.option("--name", "-n", help="Your image name", prompt='your image name')
 # @click.option("--project", "-p", default="rele-saar", help="GCP project", prompt='your project name')
-def start(name, project):
-    # x = project, name
-    build(name, project)
-    run(name, project)
-    get_ip_curl(name)
+def start():
+    build()
+    run()
+    get_ip_curl()
 
-def build(name, project):
+def build():
    '''
    build image
    '''
-   make = "docker build . -t '" + name + "' "
+   make = "docker build . -t saar"
    subprocess.run(make, shell=True)
 
-def run(name, project):
+def run():
    '''
    run docker
    '''
-   run_docker = "docker run -p 3000:3000 -d '" + name + "'"
+   run_docker = "docker run -p 3000:3000 -d saar"
    subprocess.run(run_docker, shell=True)
 
-def get_ip_curl(name):
+def get_ip_curl():
     '''
     catch local ip and do curl
     '''
@@ -49,3 +46,6 @@ def get_ip_curl(name):
         print("the Container is ok!\n")
     else:
         print("the Container is not ok\n")
+        
+if __name__ == "__main__":
+    start()
