@@ -5,9 +5,6 @@ jobs:
      # using custom image, see .circleci/images/primary/Dockerfile
        - image: circleci/python:3.6.4
     working_directory: ~/project
-    branches:
-       only:
-          - develop
     #machine: true
     steps:
 #       - checkout
@@ -20,8 +17,16 @@ jobs:
 #      - run: python3 docker-auto.py
        
 
+# workflows:
+#   version: 2
+#   build:
+#     jobs:
+#       - build
 workflows:
   version: 2
-  build:
+  main:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only: develop
