@@ -14,7 +14,7 @@ jobs:
        - run: sudo pip3 install requests
        - run: sudo pip3 install click
        - run: ls -l
-       #- run: python3 docker-auto.py
+#      - run: python3 docker-auto.py
        
 
 workflows:
