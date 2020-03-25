@@ -22,8 +22,3 @@ workflows:
   build:
     jobs:
       - build
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
