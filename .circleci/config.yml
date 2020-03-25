@@ -37,6 +37,7 @@ jobs:
     steps:
       - checkout
       - run: apt-get update -yqq
+      - run: apt-get install software-properties-common -yqq
       - run: add-apt-repository ppa:deadsnakes/ppa -yqq
       - run: apt-get update -yqq
       - run: apt-get install python3.8 -yqq
