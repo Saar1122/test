@@ -10,8 +10,8 @@ jobs:
       - run: ls -l
       - run:
           command: |  # use pipenv to install dependencies
-             pip3 install requests
-             pip3 install click
+             sudo pip3 install requests
+             sudo pip3 install click
       - run: python3 docker-auto.py
 workflows:
   version: 2
