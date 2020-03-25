@@ -16,14 +16,14 @@ jobs:
        - run: ls -l
        #- run: python3 docker-auto.py
        
+
 workflows:
   version: 2
-  build-deploy:
+  main:
     jobs:
-      - build
-      #- deploy-job:
-       #   requires:
-        #    - build # Only deploy once the build job has completed
+      - build:
+          requires:
+            - build
           filters:
             branches:
-              only: master # Only deploy on the master branch
+              only: master
