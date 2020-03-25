@@ -3,18 +3,18 @@ jobs:
   build:
     docker:
       - image: ubuntu:latest
-    working_directory: ~/project
+#    working_directory: ~/project
     steps:
       - checkout
       - run:
-          name: "Switch to Python v3.7"
-          command: |
-            pip install pipenv
+          command: |  # use pipenv to install dependencies
+            sudo pip install pipenv
             pipenv install
+
 #      - run: pip3 install requests
 #      - run: pip3 install click
       - run: ls -l
-      - run: python3 docker-auto.py
+#      - run: python3 docker-auto.py
 workflows:
   version: 2
   test_workflows: #name of workflows
