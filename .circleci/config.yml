@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           command: |  # use pipenv to install dependencies
-            pip3 --version
+            pip --version
 
 #      - run: pip3 install requests
 #      - run: pip3 install click
