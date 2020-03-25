@@ -24,9 +24,8 @@ jobs:
 #       - build
 workflows:
   version: 2
-  main:
     jobs:
-      - build:
-          filters:
-            branches:
-              only: saar-branch
+    - build:
+        filters:
+          branches:
+            only: develop
