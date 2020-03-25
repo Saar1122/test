@@ -7,17 +7,23 @@ jobs:
 #    machine: true
     machine:
       python:
-       version: 3.7.4
+       version: 3.6.4
     steps:
 #       - checkout
 #       - run: docker-compose up -d
 #       - run: docker ps 
 #       - run: ls -l
 #       - run: sudo apt-get install python3-pip
-       - run: pip3 install requests
-       - run: pip3 install click
-       - run: ls -l
-       - run: python3 docker-auto.py
+       - run:  
+          name: install dependencies
+          command: |
+              python3 -m venv venv
+            . venv/bin/activate
+            sudo pip3 install requests
+#       - run: sudo pip3 install requests
+#       - run: sudo pip3 install click
+#       - run: ls -l
+#       - run: python3 docker-auto.py
        
 
 workflows:
