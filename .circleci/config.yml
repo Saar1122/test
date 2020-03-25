@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           command: |  # use pipenv to install dependencies
-            sudo apt-get install python3-pip
+            pip3 --version
 
 #      - run: pip3 install requests
 #      - run: pip3 install click
