@@ -38,7 +38,7 @@ jobs:
       - checkout
       - run: apt-get update -yqq
       - run: apt-get install software-properties-common -yqq
-      - run: add-apt-repository ppa:deadsnakes/ppa -yqq
+      - run: add-apt-repository ppa:deadsnakes/ppa -y
       - run: apt-get update -yqq
       - run: apt-get install python3.8 -yqq
       - run: apt-get install curl -yqq
