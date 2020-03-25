@@ -18,7 +18,7 @@ jobs:
        - run: pip install requests
        - run: pip install click
        - run: ls -l
-#      - run: python3 docker-auto.py
+       - run: python3 docker-auto.py
        
 
 workflows:
