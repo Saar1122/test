@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
      # using custom image, see .circleci/images/primary/Dockerfile
-       - image: circleci/cci-demo-docker-primary:0.0.2
+       - image: circleci/python:3.6.4
     #working_directory: ~/Saar1122/test
     #machine: true
     steps:
@@ -11,8 +11,6 @@ jobs:
 #       - run: docker-compose up -d
 #       - run: docker ps 
 #       - run: ls -l
-       - run: apt-get install python3-pip
-       - run: pip3 install python
        - run: pip3 install requests
        - run: pip3 install click
        - run: pip3 docker-auto.py
