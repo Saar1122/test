@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
-    #docker:
+    docker:
      # using custom image, see .circleci/images/primary/Dockerfile
-     #- image: circleci/node:7.10
+     - image: circleci/node:7.10
     #working_directory: ~/Saar1122/test
     machine: true
     steps:
