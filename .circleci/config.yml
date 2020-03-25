@@ -18,6 +18,7 @@ jobs:
   build:
     executor: exec_env
     steps:
+      - setup
       - run: docker-compose up -d
         
 workflows:
