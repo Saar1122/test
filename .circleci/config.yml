@@ -3,12 +3,12 @@ jobs:
   build:
     docker:
      # using custom image, see .circleci/images/primary/Dockerfile
-     - image: circleci/node:7.10
+       - image: circleci/node:7.10
     #working_directory: ~/Saar1122/test
     #machine: true
     steps:
       - checkout
-      - run: docker-compose up
+      - run: docker-compose up -d
       - run: docker ps 
       - run: ls -l
 workflows:
