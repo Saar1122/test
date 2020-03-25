@@ -22,5 +22,3 @@ workflows:
   build:
     jobs:
       - build
-          branches:
-            only: develop
