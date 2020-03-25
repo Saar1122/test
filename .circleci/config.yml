@@ -20,7 +20,7 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build 
+      - build:
           requires:
             - build # Only deploy once the build job has completed
           filters:
