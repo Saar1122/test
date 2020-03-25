@@ -6,6 +6,7 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
+      - run: sudo apt-get install python3-pip
 #      - run: pip3 install requests
 #      - run: pip3 install click
       - run: ls -l
