@@ -19,9 +19,9 @@ jobs:
 
 workflows:
   version: 2
-  main:
+  build:
     jobs:
-      - build:
+      - build
           requires:
             - build
           filters:
