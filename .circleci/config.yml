@@ -1,13 +1,13 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/python:3.7.4
+#    docker:
+#      - image: circleci/python:3.7.4
     working_directory: ~/project
 #    machine: true
-#    machine:
-#      python:
-#       version: 3.7.4
+    machine:
+      python:
+       version: 3.7.4
     steps:
 #       - checkout
 #       - run: docker-compose up -d
