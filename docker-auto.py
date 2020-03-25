@@ -1,6 +1,5 @@
 import os
 import time
-import click
 import requests
 import subprocess
 #from learn import 
@@ -23,14 +22,14 @@ def build(name, project):
    '''
    build image
    '''
-   make = "docker build . -t '" + name + "' "
+   make = "docker build . -t saar"
    subprocess.run(make, shell=True)
 
 def run(name, project):
    '''
    run docker
    '''
-   run_docker = "docker run -p 3000:3000 -d '" + name + "'"
+   run_docker = "docker run -p 3000:3000 -d saar"
    subprocess.run(run_docker, shell=True)
 
 def get_ip_curl(name):
@@ -38,7 +37,7 @@ def get_ip_curl(name):
     catch local ip and do curl
     '''
     time.sleep(3)
-    get_ip_cmd = "docker ps | grep '" + name + "' | awk '{print $10}' | awk -F: '{print $1}'"
+    get_ip_cmd = "docker ps | grep saar | awk '{print $10}' | awk -F: '{print $1}'"
     ip = subprocess.run(get_ip_cmd, shell=True, capture_output=True)
     new_ip = ip.stdout.decode().strip().lower()
     port = ":3000"
