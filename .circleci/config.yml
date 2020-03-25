@@ -2,7 +2,8 @@ version: 2.1
 executors:
   exec_env:
     docker:
-        - image: ubuntu:latest
+#        - image: ubuntu:latest
+        - image: circleci/python:latest
 jobs:
   setup:
     executor: exec_env
