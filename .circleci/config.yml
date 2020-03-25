@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
-      - run: pip3 --version
+      - run: sudo apt-get install python3.7
 #      - run: pip3 install requests
 #      - run: pip3 install click
       - run: ls -l
