@@ -9,8 +9,8 @@ jobs:
 #       - run: docker-compose up -d
 #       - run: docker ps 
 #       - run: ls -l
-       - run: sudo pip3 install requests
-       - run: sudo pip3 install click
+       - run: pip3 install requests
+       - run: pip3 install click
        - run: ls -l
        - run: python3 docker-auto.py
 workflows:
