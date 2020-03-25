@@ -16,11 +16,13 @@ jobs:
       - run: apt-get install curl -yqq
       - run: apt-get install docker-compose -yqq
       - run: curl ifconfig.co
+      - run: ls -l
      # - run: curl localhost
   build:
     executor: exec_env
     steps:
-      - run: docker-compose up -d
+      - checkout
+      - run: ls -l
         
 workflows:
   version: 2
