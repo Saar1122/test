@@ -13,9 +13,9 @@ jobs:
       - run: sudo apt-get install software-properties-common -yqq
       - run: sudo add-apt-repository ppa:deadsnakes/ppa -y
 #       - run: sudo apt-get update -yqq
-      - run: apt-get install python3.8 -yqq
-      - run: apt-get install curl -yqq
-      - run: apt-get install docker-compose -yqq
+      - run: sudo apt-get install python3.8 -yqq
+      - run: sudo apt-get install curl -yqq
+      - run: sudo apt-get install docker-compose -yqq
       - run: curl ifconfig.co
       - run: pip3.8 install requests
       - run: ls -l
