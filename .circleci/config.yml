@@ -32,7 +32,7 @@ workflows:
       - setup
       - build:
           requires:
-            - setup
+           - setup
           filters:
             branches:
               only:
