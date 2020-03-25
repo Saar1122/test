@@ -6,7 +6,7 @@ import subprocess
 def start():
     build()
     run()
-    get_ip_curl()
+#    get_ip_curl()
 
 def build():
    '''
