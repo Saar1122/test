@@ -1,9 +1,10 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: ubuntu:latest
+    #docker:
+    #  - image: ubuntu:latest
 #    working_directory: ~/project
+    machine: true
     steps:
       - checkout
       - run:
