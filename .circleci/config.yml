@@ -1,16 +1,21 @@
 version: 2
 jobs:
   build:
-    #docker:
+    docker:
      # using custom image, see .circleci/images/primary/Dockerfile
-       #- image: circleci/cci-demo-docker-primary:0.0.2
+       - image: circleci/cci-demo-docker-primary:0.0.2
     #working_directory: ~/Saar1122/test
-    machine: true
+    #machine: true
     steps:
-      - checkout
-      - run: docker-compose up -d
-      - run: docker ps 
-      - run: ls -l
+#       - checkout
+#       - run: docker-compose up -d
+#       - run: docker ps 
+#       - run: ls -l
+       - run: pip3 install python3.7
+       - run: pip3.7 install requests
+       - run: pip3.7 install click
+       - run: pip3 docker-auto.py
+       
 workflows:
   version: 2
   build-deploy:
