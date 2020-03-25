@@ -24,9 +24,8 @@ workflows:
   version: 2
   setup_build: #name of workflows
     jobs:
-      - setup:
-        requires:
-        - build
+      - setup
+      - build
  #          - test
       #- build2:      # only id we build2
        #   requires:  # if build 2 depend on build 1 so do this
