@@ -1,16 +1,8 @@
 import os
 import time
-import click
 import requests
 import subprocess
-#from learn import 
 
-# url = 'http://demos.rele.ai'
-# x = requests.post(url)
-# print(x.text)
-# @click.command()
-# @click.option("--name", "-n", help="Your image name", prompt='your image name')
-# @click.option("--project", "-p", default="rele-saar", help="GCP project", prompt='your project name')
 def start():
     build()
     run()
@@ -34,8 +26,8 @@ def get_ip_curl():
     '''
     catch local ip and do curl
     '''
-    time.sleep(3)
-    get_ip_cmd = "ךך'"
+    time.sleep(4)
+    get_ip_cmd = "docker ps | grep saar | awk '{print $10}' | awk -F: '{print $1}'"
     ip = subprocess.run(get_ip_cmd, shell=True, capture_output=True)
     new_ip = ip.stdout.decode().strip().lower()
     port = ":3000"
