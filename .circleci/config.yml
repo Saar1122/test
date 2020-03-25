@@ -2,24 +2,19 @@ version: 2
 jobs:
   build:
 #    docker:
+      - image: circleci/python:3.6.2-stretch-browsers
 #      - image: circleci/python:3.7.4
     working_directory: ~/project
 #    machine: true
-    machine:
-      python:
-       version: 3.5.2
+#    machine:
+#      python:
+#       version: 3.5.2
     steps:
 #       - checkout
 #       - run: docker-compose up -d
 #       - run: docker ps 
 #       - run: ls -l
-#       - run: sudo apt-get install python3-pip
-        - run:  
-           name: install dependencies
-           command: |
-             python3 -m venv venv
-             . venv/bin/activate
-             sudo pip3 install requests
+       - run: sudo apt-get install python3-pip
 #       - run: sudo pip3 install requests
 #       - run: sudo pip3 install click
 #       - run: ls -l
