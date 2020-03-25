@@ -17,14 +17,13 @@ jobs:
       - run: apt-get install docker-compose -yqq
       - run: curl ifconfig.co
       - run: ls -l
-      - run: docker build -f Dockerfile .
      # - run: curl localhost
   build:
     executor: exec_env
     steps:
       - checkout
       - run: ls -l
-#      - run: docker-compose up -d
+      - run: python3 docker-auto.py
         
 workflows:
   version: 2
