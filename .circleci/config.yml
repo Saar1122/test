@@ -1,11 +1,10 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/python:3.6.2-stretch-browsers
-#      - image: circleci/python:3.7.4
+    #docker:
+      #- image: circleci/python:3.6.2-stretch-browsers
     working_directory: ~/project
-#    machine: true
+    machine: true
 #    machine:
 #      python:
 #       version: 3.5.2
@@ -14,7 +13,7 @@ jobs:
 #       - run: docker-compose up -d
 #       - run: docker ps 
 #       - run: ls -l
-#       - run: sudo apt-get install python3-pip
+       - run: python3 -m pip install --upgrade pip
        - run: sudo pip3 install requests
        - run: sudo pip3 install click
        - run: ls -l
