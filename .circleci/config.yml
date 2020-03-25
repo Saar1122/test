@@ -15,8 +15,8 @@ jobs:
       - run: apt-get install python3.8 -yqq
       - run: apt-get install curl -yqq
       - run: apt-get install docker-compose -yqq
-     # - run: curl ifconfig.co
-      - run: curl localhost
+      - run: curl ifconfig.co
+     # - run: curl localhost
   build:
     executor: exec_env
     steps:
