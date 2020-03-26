@@ -18,7 +18,7 @@ jobs:
       - run: apt-get install curl -yqq
       - run: apt-get install docker-compose -yqq
       - run: curl ifconfig.co
-      - run: pip3.8 install requests
+      - run: pip3 install requests
       - run: ls -l
       - run: python3 docker-auto.py
   build:
