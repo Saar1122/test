@@ -24,7 +24,7 @@ commands:
       #- run: apt-cache policy docker-ce
       #- run: apt install docker.io -yqq
       - run: apt-get install docker-ce docker-ce-cli containerd.io -yqq
-      -run:  docker --version
+      - run: docker --version
       - run: pip3 install requests
       - run: pip3 install click
       - run: curl ifconfig.co
