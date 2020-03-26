@@ -6,7 +6,7 @@ import subprocess
 
 def get_curl():
     port = ":3000"
-    id1 = "docker ps | grep hour | awk '{print $1}'"
+    id1 = "docker ps | grep seco | awk '{print $1}'"
     get_ip_cmd = "docker ps | grep saar | awk '{print $10}' | awk -F: '{print $1}'"
     ip = subprocess.run(get_ip_cmd, shell=True, capture_output=True)
     new_ip = ip.stdout.decode().strip().lower()
