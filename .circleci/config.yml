@@ -7,7 +7,7 @@ executors:
 jobs:
   setup:
     executor: exec_env
-    steps:
+    setup:
       - checkout
       - run: apt-get update -yqq
       - run: apt-get install software-properties-common -yqq
