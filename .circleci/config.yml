@@ -2,11 +2,12 @@ version: 2.1
 executors:
   exec_env:
     docker:
-        - image: ubuntu:latest
-#        - image: circleci/python:latest
-jobs:
+      - image: ubuntu:latest
+    environment:
+      RELEAI_ORG_NAME: qa100
+commands:
   setup:
-    executor: exec_env
+    description: "Prepare executor env"
     steps:
       - checkout
       - run: apt-get update -yqq
@@ -19,23 +20,25 @@ jobs:
       - run: apt-get install docker-compose -yqq
       - run: pip3 install requests
       - run: curl ifconfig.co
-      - run: ls -l
-#      - run: python3 docker-auto.py
+jobs:
   build:
     executor: exec_env
     steps:
-      - checkout
+      - setup
       - run: ls -l
       - run: python3 docker-auto.py
-        
 workflows:
   version: 2
-  setup_build: #name of workflows
+  setup_build:
     jobs:
-      - setup
       - build:
-          requires:
-           - setup
           filters:
             branches:
-              only: master
+
+#       - setup # step1
+#       - build: # step2
+#           requires: 
+#            - setup # must to finish step1 to progress
+#           filters:
+#             branches:
+#               only: master # work only on master
