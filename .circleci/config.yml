@@ -34,7 +34,7 @@ workflows:
       - build:
           filters:
             branches: 
-              only: circleci-project-setup
+              only: dev
 
 #       - setup # step1
 #       - build: # step2
