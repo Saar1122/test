@@ -32,7 +32,7 @@ commands:
              apt-get update
              apt-get install -y docker-ce
       - run: docker --version
-      - run: docker ps
+      - run: sudo docker ps
       - run: pip3 install requests
       - run: pip3 install click
       - run: curl ifconfig.co
