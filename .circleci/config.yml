@@ -20,7 +20,7 @@ commands:
       - run: apt install apt-transport-https ca-certificates curl software-properties-common -yqq
       - run: apt-get install docker-compose -yqq
       #- run: apt-cache policy docker-ce
-      - run: apt-get install -y docker-ce
+      - run: apt-get install docker-ce -yqq
       - run: pip3 install requests
       - run: pip3 install click
       - run: curl ifconfig.co
