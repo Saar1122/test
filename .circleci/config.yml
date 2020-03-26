@@ -31,7 +31,7 @@ jobs:
     steps:
       - setup
       - run: ls -l
-      - run: python3 docker-auto.py
+      - run: python3 check.py
 workflows:
   version: 2
   setup_build:
