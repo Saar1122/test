@@ -23,8 +23,6 @@ commands:
       #- run: apt-get install docker-compose -yqq
       #- run: apt-cache policy docker-ce
       #- run: apt install docker.io -yqq
-      #- run: systemctl start docker
-      #- run: systemctl enable docker
       - run: 
           name: Install docker
           command: |
@@ -39,6 +37,8 @@ commands:
             apt-get update
             apt-get install -y docker-ce
             docker --version
+      - run: systemctl start docker
+      - run: systemctl enable docker
       - run: pip3 install requests
       - run: pip3 install click
       - run: curl ifconfig.co
@@ -48,9 +48,8 @@ jobs:
     steps:
       - setup
       - run: ls -l
-      - run: docker-compose up -d
-#      - run: docker run -p 3000:3000 -d saar
-#      - run: curl localhost:3000
+      - run: docker run -p 3000:3000 -d saar
+      - run: curl localhost:3000
 workflows:
   version: 2
   setup_build:
