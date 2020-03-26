@@ -65,7 +65,7 @@ jobs:
              docker run -p 5000:5000 -d saar
              docker ps
              python3 get-curl.py
-##      - run: docker exec saar curl http://localhost:5000
+      - run: curl http://localhost:5000
 workflows:
   version: 2
   setup_build:
