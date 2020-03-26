@@ -56,7 +56,7 @@ jobs:
           name: check python script
           command: |
              python3 docker-auto.py
-             curl: http://localhost:3000
+             curl http://localhost:3000
       - run: docker ps
       - run: 
           name: check docker status
