@@ -10,7 +10,7 @@ commands:
     description: "Prepare executor env"
     steps:
       - checkout
-      - docker/install-docker-tools
+      - setup_remote_docker
       - run: apt-get update -yqq
       - run: apt-get install software-properties-common -yqq
       - run: add-apt-repository ppa:deadsnakes/ppa -y
@@ -19,19 +19,25 @@ commands:
       - run: apt-get install python3-pip -yqq
       - run: apt-get install python3.8 -yqq
       - run: apt-get install curl -yqq
-#       - run: 
-#           name: Docker install
-#           command: |
-#              apt-get update --fix-missing
-#              apt-get install -y apt-transport-https ca-certificates software-properties-common
-#              curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-#              apt-key fingerprint 0EBFCD88
-#              add-apt-repository \
-#                "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-#                $(lsb_release -cs) \
-#                stable"
-#              apt-get update
-#              apt-get install -y docker-ce
+      - run: 
+          name: Docker install
+          command: |
+             apt-get update --fix-missing
+             apt-get install -y apt-transport-https ca-certificates software-properties-common
+             curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+             apt-key fingerprint 0EBFCD88
+             add-apt-repository \
+               "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+               $(lsb_release -cs) \
+               stable"
+             apt-get update
+             apt-get install -y docker-ce
+      - run:
+          name: Install Docker Compose
+          command: |
+            set -x
+            curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+            chmod +x /usr/local/bin/docker-compose
       - run: docker --version
       - run: docker ps
       - run: pip3 install requests
