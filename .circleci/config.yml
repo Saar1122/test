@@ -23,21 +23,8 @@ commands:
       #- run: apt-get install docker-compose -yqq
       #- run: apt-cache policy docker-ce
       #- run: apt install docker.io -yqq
-      - run: 
-          name: Install docker
-          command: |
-#            apt-get update --fix-missing
-#            apt-get install -y apt-transport-https ca-certificates software-properties-common
-#            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-#            apt-key fingerprint 0EBFCD88
-#            add-apt-repository \
-#              "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-#              $(lsb_release -cs) \
-#              stable"
-#            apt-get update
-#            apt-get install -y docker-ce
-            apt-get install docker-ce docker-ce-cli containerd.io
-            docker --version
+      - run: apt-get install docker-ce docker-ce-cli containerd.io -yqq
+      -run:  docker --version
       - run: pip3 install requests
       - run: pip3 install click
       - run: curl ifconfig.co
@@ -65,3 +52,13 @@ workflows:
 #           filters:
 #             branches:
 #               only: master # work only on master
+#            apt-get update --fix-missing
+#            apt-get install -y apt-transport-https ca-certificates software-properties-common
+#            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+#            apt-key fingerprint 0EBFCD88
+#            add-apt-repository \
+#              "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+#              $(lsb_release -cs) \
+#              stable"
+#            apt-get update
+#            apt-get install -y docker-ce
