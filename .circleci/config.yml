@@ -10,11 +10,11 @@ commands:
     description: "Prepare executor env"
     steps:
       - checkout
+      - docker/install-docker-tools
       - run: apt-get update -yqq
       - run: apt-get install software-properties-common -yqq
       - run: add-apt-repository ppa:deadsnakes/ppa -y
       - run: apt-get update -yqq
-      - docker/install-docker-tools
       - run: apt-get install sudo -yqq
       - run: apt-get install python3-pip -yqq
       - run: apt-get install python3.8 -yqq
