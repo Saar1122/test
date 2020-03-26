@@ -62,7 +62,6 @@ jobs:
           command: | 
              docker build . -t saar
              docker run -p 5000:5000 -d saar --name saar
-             background: true
              docker ps
              
       - run: docker exec saar curl http://localhost:5000
