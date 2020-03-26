@@ -26,7 +26,7 @@ jobs:
     steps:
       - checkout
       - run: ls -l
-       - run: python3 docker-auto.py
+      - run: python3 docker-auto.py
         
 workflows:
   version: 2
