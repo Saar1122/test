@@ -20,7 +20,7 @@ commands:
              apt-get update -yqq
       - run: apt-get install curl -yqq
       - run: 
-          name: Docker install
+          name: Installing Docker packages
           command: |
              apt-get update --fix-missing
              apt-get install -y apt-transport-https ca-certificates software-properties-common
@@ -32,9 +32,6 @@ commands:
                stable"
              apt-get update
              apt-get install -y docker-ce
-      - run:
-          name: Install Docker Compose
-          command: |
              set -x
              curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
              chmod +x /usr/local/bin/docker-compose
@@ -44,7 +41,7 @@ commands:
              apt-get install python3-pip -yqq
              apt-get install python3.8 -yqq
       - run: 
-          name: Install Python Package
+          name: Install Python Packages
           command: |
              pip3 install requests
              pip3 install click
@@ -56,7 +53,6 @@ jobs:
       - setup
       - run: ls -l
       - run: python3 docker-auto.py
-      - run: curl localhost:3000
 workflows:
   version: 2
   setup_build:
