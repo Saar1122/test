@@ -18,12 +18,19 @@ commands:
       - run: apt-get install python3-pip -yqq
       - run: apt-get install python3.8 -yqq
       - run: apt-get install curl -yqq
-      #- run: apt-get remove docker docker-engine docker.io -yqq
-      #- run: apt install apt-transport-https ca-certificates curl software-properties-common -yqq
-      #- run: apt-get install docker-compose -yqq
-      #- run: apt-cache policy docker-ce
-      #- run: apt install docker.io -yqq
-      - run: apt-get install docker-ce docker-ce-cli containerd.io -yqq
+      - run: 
+          name: Docker install
+          commands: |
+           apt-get update --fix-missing
+           apt-get install -y apt-transport-https ca-certificates software-properties-common
+           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+           apt-key fingerprint 0EBFCD88
+           add-apt-repository \
+             "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+             $(lsb_release -cs) \
+             stable"
+           apt-get update
+           apt-get install -y docker-ce
       - run: docker --version
       - run: pip3 install requests
       - run: pip3 install click
