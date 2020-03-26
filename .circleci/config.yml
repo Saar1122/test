@@ -1,21 +1,45 @@
 version: 2.1
-
-orbs:
-  python: circleci/python@0.2.1
-
-jobs:
-  build-and-test:
-    executor: python/default
+executors:
+  exec_env:
+    docker:
+      - image: ubuntu:latest
+    environment:
+      RELEAI_ORG_NAME: qa100
+commands:
+  setup:
+    description: "Prepare executor env"
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
-      - run:
-          command: ./manage.py test
-          name: Test
-
+      - run: apt-get update -yqq
+      - run: apt-get install software-properties-common -yqq
+      - run: add-apt-repository ppa:deadsnakes/ppa -y
+      - run: apt-get update -yqq
+      - run: apt-get install python3-pip -yqq
+      - run: apt-get install python3.8 -yqq
+      - run: apt-get install curl -yqq
+      - run: apt-get install docker-compose -yqq
+      - run: pip3 install requests
+      - run: curl ifconfig.co
+jobs:
+  build:
+    executor: exec_env
+    steps:
+      - setup
+      - run: ls -l
+      - run: python3 docker-auto.py
 workflows:
-  main:
+  version: 2
+  setup_build:
     jobs:
-      - build-and-test
+      - build:
+          filters:
+            branches: 
+              only: circleci-project-setup
+
+#       - setup # step1
+#       - build: # step2
+#           requires: 
+#            - setup # must to finish step1 to progress
+#           filters:
+#             branches:
+#               only: master # work only on master
