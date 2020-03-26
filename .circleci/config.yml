@@ -37,8 +37,8 @@ commands:
             apt-get update
             apt-get install -y docker-ce
             docker --version
-      - run: systemctl start docker
-      - run: systemctl enable docker
+      - run: sudo systemctl start docker
+      - run: sudo systemctl enable docker
       - run: pip3 install requests
       - run: pip3 install click
       - run: curl ifconfig.co
