@@ -72,8 +72,8 @@ workflows:
   setup_build:
     jobs:
       - build:
-          experimental:
-            pipelines: true
+#           experimental:
+#             pipelines: true
           filters:
             branches: 
               only: dev
