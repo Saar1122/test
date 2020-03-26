@@ -47,7 +47,7 @@ jobs:
     steps:
       - setup
       - run: ls -l
-      - run: docker build . -t saar
+      - run: sudo docker build . -t saar
       - run: docker run -p 3000:3000 -d saar
       - run: curl localhost:3000
 workflows:
