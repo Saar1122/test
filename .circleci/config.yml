@@ -33,7 +33,8 @@ workflows:
     jobs:
       - build:
           filters:
-            branches:
+            branches: 
+              only: master
 
 #       - setup # step1
 #       - build: # step2
