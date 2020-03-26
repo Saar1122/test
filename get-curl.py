@@ -16,5 +16,5 @@ def get_curl():
     exec1 = "docker exec -it '" + new_id + "' curl '" + ip_port + "'"
     get_exec = subprocess.run(exec1, shell=True)
 
-if __name__ == "__main__":
-    get_curl()
+# if __name__ == "__main__":
+#     get_curl()
