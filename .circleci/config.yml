@@ -57,6 +57,7 @@ jobs:
           command: |
              python3 docker-auto.py
              docker ps -a | grep seco | awk '{print $1}'
+             python3 get-curl.py
       - run: 
           name: check docker status
           command: | 
