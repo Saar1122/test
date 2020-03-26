@@ -22,7 +22,7 @@ jobs:
       - run: ls -l
 #      - run: python3 docker-auto.py
   build:
-#    executor: exec_env
+    executor: exec_env
     steps:
       - checkout
       - run: ls -l
