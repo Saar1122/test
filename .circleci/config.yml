@@ -73,7 +73,7 @@ workflows:
     jobs:
       - build:
           experimental:
-          pipelines: true
+            pipelines: true
           filters:
             branches: 
               only: dev
