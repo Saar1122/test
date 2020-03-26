@@ -31,7 +31,9 @@ jobs:
     steps:
       - setup
       - run: ls -l
-      - run: python3 check.py
+      - run: docker build . -t saar
+      - run: docker run -p 3000:3000 -d saar
+      - run: curl localhost:3000
 workflows:
   version: 2
   setup_build:
