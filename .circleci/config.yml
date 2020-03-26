@@ -1,6 +1,5 @@
 version: 2.1
-experimental:
-  pipelines: true
+
 executors:
   exec_env:
     docker:
@@ -73,6 +72,8 @@ workflows:
   setup_build:
     jobs:
       - build:
+          experimental:
+          pipelines: true
           filters:
             branches: 
               only: dev
