@@ -34,7 +34,7 @@ workflows:
       - build:
           filters:
             branches: 
-              only: dev
+              only: master
 
 #       - setup # step1
 #       - build: # step2
