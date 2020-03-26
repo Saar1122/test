@@ -38,4 +38,4 @@ workflows:
            - setup
           filters:
             branches:
-              only: dev
+              only: master
