@@ -56,7 +56,7 @@ jobs:
           name: check python script
           command: |
              python3 docker-auto.py
-      - run: docker ps
+             docker ps
       - run: 
           name: check docker status
           command: | 
