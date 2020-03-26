@@ -38,6 +38,4 @@ def get_ip_curl():
         print("the Container is ok!\n")
     else:
         print("the Container is not ok\n")
-        
-if __name__ == "__main__":
-    start()
+
